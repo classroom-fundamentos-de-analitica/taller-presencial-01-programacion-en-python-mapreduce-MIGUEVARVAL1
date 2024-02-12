@@ -22,7 +22,7 @@ with open("output/part-00000", "r", encoding="utf-8") as f:
     result = {}
     for line in lines:
         key, value = line.strip().split("\t")
-        result[key] = value
+        result[key] = int(value)
 
 assert result["analytics"] == 5
 assert result["business"] == 7
