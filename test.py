@@ -2,16 +2,20 @@
 
 import os
 
+from word_count import job
+
+job("input/", "output/")
+
 #
 # Retorna error si la carpeta output/ no existe
 if not os.path.exists("output/"):
-    raise Exception("Output directory does not exist")
+    raise FileNotFoundError("Output directory does not exist")
 
 #
 # Retorna error si el archivo "_SUCCESS" no existe en la
 # carpeta output/
 if not os.path.exists("output/_SUCCESS"):
-    raise Exception("Output directory is empty")
+    raise FileNotFoundError("Output directory is empty")
 
 #
 # Lee el contenido del archivo "part-00000" en la carpeta output/
